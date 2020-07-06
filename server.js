@@ -23,8 +23,11 @@ io.on('connection', (socket) => {
     let me = false;
     console.log("user connected")
 
+    for (let i in users) {
+        socket.emit('newusr', users[i])
+    }
+
     socket.on('login', (user) => {
-        console.log(user)
        me = user.id;
        console.log(me)
        users[me] = me;
@@ -43,6 +46,7 @@ io.on('connection', (socket) => {
 
 // Send To All => io.emit()
 // Send To All sauf emetteur => socket.broadcast.emit()
+// Send To me => socket.emit()
 
 http.listen(config.server.port, config.server.host, function () {
     console.log('Server listen on http://' + config.server.host + ':' + config.server.port);

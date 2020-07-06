@@ -1,7 +1,7 @@
 $(function () {
     let socket = io();
 
-    socket.emit('login' , {id : 1})
+    socket.emit('login' , {id : Date.now()})
 
     $('form').submit(function (e) {
         e.preventDefault();
@@ -10,10 +10,10 @@ $(function () {
         $('#input-message').val('')
         $('#messages').append('<div class="message-container text-center"><div class="text">'+ text +'</div></div>')
         return false;
-    })
+    });
 
     socket.on('newusr' , function (user) {
-        $('#membre').append('<div id="user-' + user + '">User' + user + '</div>')
+        $('#membre').append('<div id="user-' + user + '">User-' + user + '</div>')
     })
 
     socket.on('delusr' , function (user) {
