@@ -1,0 +1,30 @@
+# OSX
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Compiled Python files
+*.pyc
+
+# Compiled C++ files
+*.out
+
+#npm
+node_modules/**/*
+.expo/*
+.expo-shared/*
+npm-debug.*
+*.jks
+*.p12
+*.key
+*.mobileprovision
+
+# WebStorm
+.idea
