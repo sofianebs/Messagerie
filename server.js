@@ -5,11 +5,11 @@ const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 
 app.get('/', function (req, res) {
-    res.sendFile('/Users/anton/Desktop/Webscoket/index.html')
+    res.sendFile('/home/sofiane/Desktop/NodeRendu/CoursWebSockets/index.html')
 })
 
-app.get('/style.css', function (req, res) {
-    res.sendFile(__dirname + '/style.css')
+app.get('/main.css', function (req, res) {
+    res.sendFile(__dirname + '/main.css')
 })
 
 app.get('/client.js', function (req, res) {
