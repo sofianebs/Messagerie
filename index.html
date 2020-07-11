@@ -26,11 +26,10 @@
 				</div></div>
 				<div class="col-md-8 col-xl-6 chat">
 					<div class="card">
-						<div class="card-header msg_head">
-							<div class="d-flex bd-highlight">
-								<div class="img_cont">
-									<img src="https://api.adorable.io/avatars/100/" class="rounded-circle user_img">
-									<span class="online_icon"></span>
+						<div class="card-header msg_head" >
+							<div class="d-flex bd-highlight" >
+								<div class="img_cont"id="ME">
+									
 								</div>
 								<div class="user_info">
 									<span>En ligne</span>
@@ -46,9 +45,10 @@
 						<div class="card-footer">
 							<div class="input-group">
 								<div class="input-group-append">
-									<form action="/upload" enctype="multipart/form-data" id="Form"method="post">
+									<form action="/upload" enctype="multipart/form-data" id="target" method="post">
 								
 										<input id="open" type="file" name="name" style="display: none;" />
+										<input type="submit" value="Go" style="display: none;"/>
 										
 									  </form>
 									<span class="input-group-text attach_btn"><i class="fas fa-paperclip" id ="btn"></i></span>
