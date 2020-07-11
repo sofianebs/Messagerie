@@ -18,20 +18,8 @@
 					
 					<div class="card-body contacts_body">
 						<ui class="contacts" id ="membre">
-						<li class="active">
-							<div class="d-flex bd-highlight">
-								<div class="img_cont">
-									<img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img">
-									<span class="online_icon"></span>
-								</div>
-								<div class="user_info">
-									<span>ME</span>
-									<p>Vous etes En ligne</p>
-								</div>
-							</div>
-						</li>
-					
-					
+						
+
 						</ui>
 					</div>
 					<div class="card-footer"></div>
@@ -41,7 +29,7 @@
 						<div class="card-header msg_head">
 							<div class="d-flex bd-highlight">
 								<div class="img_cont">
-									<img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img">
+									<img src="https://api.adorable.io/avatars/100/" class="rounded-circle user_img">
 									<span class="online_icon"></span>
 								</div>
 								<div class="user_info">
@@ -58,7 +46,12 @@
 						<div class="card-footer">
 							<div class="input-group">
 								<div class="input-group-append">
-									<span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
+									<form action="/upload" enctype="multipart/form-data" id="Form"method="post">
+								
+										<input id="open" type="file" name="name" style="display: none;" />
+										
+									  </form>
+									<span class="input-group-text attach_btn"><i class="fas fa-paperclip" id ="btn"></i></span>
 								</div>
 								<textarea name="" id="input-message" class="form-control type_msg" placeholder="Tappez votre  message..."></textarea>
 								<div class="input-group-append" id="send">
@@ -71,7 +64,6 @@
 			</div>
 		</div>
 	</body>
-	<script type="text/javascript" src="app.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="client.js"></script>
 </html>

@@ -1,9 +1,11 @@
 const config = require('./config')
-
 const app = require('express')()
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
-
+const fs = require('fs'); 
+const path = require('path') 
+const fileUpload = require('express-fileupload');
+app.use(fileUpload({ safeFileNames: true, preserveExtension: true }))
 app.get('/', function (req, res) {
     res.sendFile('/home/sofiane/Desktop/NodeRendu/CoursWebSockets/index.html')
 })
@@ -16,6 +18,11 @@ app.get('/client.js', function (req, res) {
     res.sendFile(__dirname + '/client.js')
 })
 
+app.post('/upload', function(req, res) {
+    // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+    console.log(req);
+
+});
 let users = {}
 
 io.on('connection', (socket) => {
@@ -41,6 +48,10 @@ io.on('connection', (socket) => {
     })
     socket.on('chat message', (msg) => {
         socket.broadcast.emit('chat message' , msg)
+    })
+    socket.on('Iswriting', (user) => {
+        socket.broadcast.emit('Notification' , user)
+       
     })
 });
 
